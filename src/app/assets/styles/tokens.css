@@ -1,0 +1,21 @@
+:root {
+  --color-red-500: #ff2239;
+  --color-white: #ffffff;
+  --color-gray-100: #f9f9f9;
+  --color-gray-150: #f5f5f5;
+  --color-gray-400: #bfbfbf;
+  --color-gray-700: #5e5e5e;
+  --color-gray-800: #353535;
+  --color-gold-500: #eca539;
+
+  --color-bg-app: var(--color-gray-100);
+  --color-button-bg: var(--color-red-500);
+  --color-button-text: var(--color-white);
+  --color-button-bg-disabled: var(--color-gray-400);
+  --color-text-heading: var(--color-gray-800);
+  --color-text-body: var(--color-gray-700);
+  --color-text-placeholder: var(--color-gray-400);
+  --color-star-filled: var(--color-gold-500);
+  --color-star-empty: var(--color-gray-400);
+  --color-star-chip-bg: var(--color-gray-150);
+}
