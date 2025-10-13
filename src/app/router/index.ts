@@ -9,7 +9,21 @@ const routes = [
   {
     path: "/pokedex",
     name: "pokedex",
-    component: () => import("@/features/pokedex/views/PokedexListView.vue"),
+    components: {
+      default: () => import("@/features/pokedex/views/PokedexListView.vue"),
+    },
+    children: [
+      {
+        path: ":name",
+        name: "pokemon-detail",
+        components: {
+          modal: () => import("@/features/details/views/PokemonDetailView.vue"),
+        },
+        props: {
+          modal: true,
+        },
+      },
+    ],
   },
 ];
 
