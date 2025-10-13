@@ -18,4 +18,5 @@
   --color-star-filled: var(--color-gold-500);
   --color-star-empty: var(--color-gray-400);
   --color-star-chip-bg: var(--color-gray-150);
+  --color-star-chip-bg-active: var(--color-gray-100);
 }
