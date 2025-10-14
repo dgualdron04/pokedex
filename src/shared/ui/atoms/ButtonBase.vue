@@ -37,7 +37,7 @@ interface AnchorProps extends Props {
 
 interface RouterLinkProps extends Props {
   as: "router-link";
-  to: RouteLocationRaw;
+  to?: RouteLocationRaw;
 }
 
 type ButtonBaseProps = ButtonProps | AnchorProps | RouterLinkProps;

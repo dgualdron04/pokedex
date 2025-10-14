@@ -31,6 +31,7 @@ export const PokeApiService = {
     const call = axios.get<PokemonApiResponse>(`${BASE_URL}/pokemon/${name}`, {
       signal: controller.signal,
     });
+
     return {
       call,
       controller,
