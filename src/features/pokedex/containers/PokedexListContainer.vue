@@ -7,9 +7,6 @@
     :onFetchMore="pokemonList.fetchMore"
     :onToggleFavorite="() => {}"
   />
-  <Teleport to="body">
-    <RouterView name="modal" />
-  </Teleport>
 </template>
 
 <script setup lang="ts">

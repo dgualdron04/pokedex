@@ -3,10 +3,13 @@
     :is="as === 'router-link' ? RouterLink : as"
     v-bind="componentProps"
     class="btn-base"
-    :class="[`btn-${variant}`]"
+    :class="[`btn-${variant}`, { 'is-loading': loading }]"
     @click="onClick"
   >
+    <slot name="icon-left" />
     <slot>{{ label }}</slot>
+    <slot name="icon-right" />
+    <slot name="loader" v-if="loading" />
   </component>
 </template>
 
@@ -20,8 +23,9 @@ interface Props {
   as?: ComponentType;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  loading?: boolean;
   label?: string;
-  variant?: "primary";
+  variant?: "primary" | "secondary" | "danger";
 }
 
 interface ButtonProps extends Props {
@@ -46,6 +50,7 @@ const props = withDefaults(defineProps<ButtonBaseProps>(), {
   as: "button",
   type: "button",
   disabled: false,
+  loading: false,
   label: "",
   variant: "primary",
 });
@@ -53,7 +58,7 @@ const props = withDefaults(defineProps<ButtonBaseProps>(), {
 const emit = defineEmits<{ (e: "click", ev: MouseEvent): void }>();
 
 function onClick(e: MouseEvent) {
-  if (props.disabled) {
+  if (props.disabled || props.loading) {
     e.preventDefault();
     e.stopPropagation();
     return;
@@ -93,10 +98,16 @@ const componentProps = computed(() => {
   cursor: pointer;
   transition: filter 0.2s;
   text-decoration: none;
+  justify-content: space-evenly;
 }
 
 .btn-primary {
   background: var(--color-button-bg);
+  color: var(--color-button-text);
+}
+
+.btn-secondary {
+  background: var(--color-button-bg-disabled);
   color: var(--color-button-text);
 }
 

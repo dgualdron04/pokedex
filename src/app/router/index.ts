@@ -1,30 +1,21 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  type RouteRecordRaw,
+} from "vue-router";
+import { pokedexRoutes } from "../../features/pokedex/routes";
+import { favoritesRoutes } from "../../features/favorites/routes";
+import { searchRoutes } from "../../features/search/routes";
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "welcome",
     component: () => import("@/app/views/WelcomeView.vue"),
   },
-  {
-    path: "/pokedex",
-    name: "pokedex",
-    components: {
-      default: () => import("@/features/pokedex/views/PokedexListView.vue"),
-    },
-    children: [
-      {
-        path: ":name",
-        name: "pokemon-detail",
-        components: {
-          modal: () => import("@/features/details/views/PokemonDetailView.vue"),
-        },
-        props: {
-          modal: true,
-        },
-      },
-    ],
-  },
+  ...pokedexRoutes,
+  ...favoritesRoutes,
+  ...searchRoutes,
 ];
 
 export const router = createRouter({
