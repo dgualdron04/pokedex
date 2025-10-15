@@ -5,7 +5,6 @@ import {
 } from "vue-router";
 import { pokedexRoutes } from "../../features/pokedex/routes";
 import { favoritesRoutes } from "../../features/favorites/routes";
-import { searchRoutes } from "../../features/search/routes";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -15,7 +14,6 @@ const routes: Array<RouteRecordRaw> = [
   },
   ...pokedexRoutes,
   ...favoritesRoutes,
-  ...searchRoutes,
 ];
 
 export const router = createRouter({

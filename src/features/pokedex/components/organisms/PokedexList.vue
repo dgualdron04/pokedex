@@ -13,8 +13,6 @@
     <div ref="sentinel" v-show="hasMore">
       <span v-if="loading">Loding more...</span>
     </div>
-
-    <button v-if="hasMore && !loading" @click="onFetchMore">Load more</button>
   </section>
 </template>
 

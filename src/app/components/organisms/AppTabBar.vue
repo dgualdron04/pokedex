@@ -55,5 +55,6 @@ const isFavsActive = computed(() => String(route.name).startsWith("favorites"));
   grid-auto-flow: column;
   gap: 12px;
   z-index: 1;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
 }
 </style>
