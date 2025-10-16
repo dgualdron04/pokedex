@@ -21,5 +21,6 @@ const { isBusy } = storeToRefs(UseLoadingStore());
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 </style>

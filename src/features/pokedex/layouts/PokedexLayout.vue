@@ -22,5 +22,7 @@ import AppTabBar from "@/app/components/organisms/AppTabBar.vue";
   padding-top: 2.1rem;
   max-width: 570px;
   width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 105px);
 }
 </style>
