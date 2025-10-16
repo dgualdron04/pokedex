@@ -18,7 +18,6 @@
             favoriteList.toggle({
               id: p.id,
               name: p.name,
-              img: `${baseUrl}/${p.name}`,
             })
         "
         detailRouteName="pokemon-detail"

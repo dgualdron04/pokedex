@@ -5,7 +5,7 @@ import svgLoader from "vite-svg-loader";
 import path from "node:path";
 
 export default defineConfig({
-  plugins: [vue(), svgLoader({ svgo: false })],
+  plugins: [vue(), svgLoader({ svgo: true })],
   base: "/pokedex/",
   server: {
     watch: {
@@ -17,5 +17,10 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    emptyOutDir: true,
   },
 });

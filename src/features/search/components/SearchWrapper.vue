@@ -29,13 +29,13 @@
 import { computed } from "vue";
 import SearchBar from "@/shared/ui/molecules/SearchBar.vue";
 import { useLocalSearch } from "../composables/UseLocalSearch";
-import { PokemonListItem } from "@/shared/models/pokemon/PokemonTypes";
 import ButtonBase from "@/shared/ui/atoms/ButtonBase.vue";
+import { PokemonListRow } from "@/features/pokedex/adapters/PokemonListAdapter";
 
 interface SearchWrapperProps {
-  list: Array<PokemonListItem>;
+  list: Array<PokemonListRow>;
   placeholder?: string;
-  selector: (item: PokemonListItem) => string;
+  selector: (item: PokemonListRow) => string;
   debounceMs?: number;
   minChars?: number;
   limit?: number;
@@ -44,7 +44,7 @@ interface SearchWrapperProps {
 const props = defineProps<SearchWrapperProps>();
 const listRef = computed(() => props.list);
 
-const search = useLocalSearch<PokemonListItem>(listRef, {
+const search = useLocalSearch<PokemonListRow>(listRef, {
   selector: props.selector,
   debounceMs: props.debounceMs ?? 200,
   minChars: props.minChars ?? 1,
