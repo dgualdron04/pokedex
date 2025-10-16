@@ -1,7 +1,7 @@
 import { ref, shallowRef, onUnmounted, type Ref, type ShallowRef } from "vue";
 import type { AxiosResponse } from "axios";
-import type { UseApiCall } from "../models/UseApiCall.ts";
-import { UseLoadingStore } from "../../app/store/UseLoadingStore.ts";
+import type { UseApiCall } from "../models/UseApiCall";
+import { UseLoadingStore } from "../../app/store/UseLoadingStore";
 
 type UseApiOptions<P> = { autoFetch?: boolean; params: P };
 type CustomError = Error | null;

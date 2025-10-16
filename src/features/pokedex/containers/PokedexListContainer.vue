@@ -14,7 +14,12 @@
         :hasMore="!active && pokemonList.hasMore.value"
         :onFetchMore="pokemonList.fetchMore"
         :onToggleFavorite="
-          (p) => favoriteList.toggle({ id: p.id, name: p.name })
+          (p) =>
+            favoriteList.toggle({
+              id: p.id,
+              name: p.name,
+              img: `${baseUrl}/${p.name}`,
+            })
         "
         detailRouteName="pokemon-detail"
       />
@@ -24,8 +29,8 @@
 
 <script setup lang="ts">
 import { onMounted, computed } from "vue";
-import { UsePokedexList } from "../composables/UsePokedexList.ts";
-import { UseFavorites } from "@/features/favorites/composables/UseFavorites.ts";
+import { UsePokedexList } from "../composables/UsePokedexList";
+import { UseFavorites } from "@/features/favorites/composables/UseFavorites";
 import PokedexList from "../components/organisms/PokedexList.vue";
 import SearchWrapper from "@/features/search/components/SearchWrapper.vue";
 
@@ -38,6 +43,8 @@ const items = computed(() =>
     isFavorite: favoriteList.isFavorite(pokemon.id),
   })),
 );
+
+const baseUrl = "https://pokeapi.co/api/v2/pokemon";
 
 onMounted(pokemonList.init);
 </script>

@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import LoaderSvg from "@/app/assets/icones/Loader.svg?component";
+import LoaderSvg from "@/app/assets/icons/Loader.svg?component";
 </script>
 
 <style scoped>

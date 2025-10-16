@@ -30,8 +30,8 @@
 </template>
 
 <script setup lang="ts">
-import TabsSvg from "@/app/assets/icones/Tabs.svg?component";
-import StarSvg from "@/app/assets/icones/Star.svg?component";
+import TabsSvg from "@/app/assets/icons/Tabs.svg?component";
+import StarSvg from "@/app/assets/icons/Star.svg?component";
 import ButtonBase from "@/shared/ui/atoms/ButtonBase.vue";
 
 import { computed } from "vue";

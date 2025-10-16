@@ -1,5 +1,5 @@
 import { computed } from "vue";
-import { UseFavoritesStore } from "../store/UseFavoritesStore.ts";
+import { UseFavoritesStore } from "../store/UseFavoritesStore";
 
 export function UseFavoritesList() {
   const store = UseFavoritesStore();

@@ -9,9 +9,8 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { RouterView } from "vue-router";
-import AppTabBar from "./components/organisms/AppTabBar.vue";
 import Loader from "@/shared/ui/atoms/Loader.vue";
-import { UseLoadingStore } from "../app/store/UseLoadingStore.ts";
+import { UseLoadingStore } from "../app/store/UseLoadingStore";
 
 const { isBusy } = storeToRefs(UseLoadingStore());
 </script>

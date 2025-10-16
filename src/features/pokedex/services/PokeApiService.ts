@@ -2,9 +2,9 @@ import axios from "axios";
 import type {
   PokemonApiResponse,
   PokemonListResponse,
-} from "@/shared/models/pokemon/PokemonTypes.ts";
+} from "@/shared/models/pokemon/PokemonTypes";
 import { LoadAbort } from "@/shared/utilities/LoadAbort";
-import type { UseApiCall } from "@/shared/models/UseApiCall.ts";
+import type { UseApiCall } from "@/shared/models/UseApiCall";
 
 const BASE_URL = "https://pokeapi.co/api/v2";
 

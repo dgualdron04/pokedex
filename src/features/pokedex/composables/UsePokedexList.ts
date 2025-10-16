@@ -4,8 +4,8 @@ import type { PokemonListResponse } from "@/shared/models/pokemon/PokemonTypes";
 import {
   type PokemonListRow,
   toPokemonList,
-} from "../adapters/PokemonListAdapter.ts";
-import { PokeApiService } from "../services/PokeApiService.ts";
+} from "../adapters/PokemonListAdapter";
+import { PokeApiService } from "../services/PokeApiService";
 
 export function UsePokedexList(pageSize = 20) {
   const items = ref<Array<PokemonListRow>>([]);

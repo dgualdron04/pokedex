@@ -28,8 +28,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import SearchBar from "@/shared/ui/molecules/SearchBar.vue";
-import { useLocalSearch } from "../composables/UseLocalSearch.ts";
-import { PokemonListItem } from "@/shared/models/pokemon/PokemonTypes.ts";
+import { useLocalSearch } from "../composables/UseLocalSearch";
+import { PokemonListItem } from "@/shared/models/pokemon/PokemonTypes";
 import ButtonBase from "@/shared/ui/atoms/ButtonBase.vue";
 
 interface SearchWrapperProps {

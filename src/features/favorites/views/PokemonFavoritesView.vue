@@ -24,10 +24,10 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { UseFavorites } from "@/features/favorites/composables/UseFavorites.ts";
+import { UseFavorites } from "@/features/favorites/composables/UseFavorites";
 import PokedexList from "@/features/pokedex/components/organisms/PokedexList.vue";
 import SearchWrapper from "@/features/search/components/SearchWrapper.vue";
-import { UseFavoritesList } from "../composables/UseFavoritesList.ts";
+import { UseFavoritesList } from "../composables/UseFavoritesList";
 
 const { items } = UseFavoritesList();
 const favoriteList = UseFavorites();

@@ -21,12 +21,12 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
-import { PokemonListRow } from "../../adapters/PokemonListAdapter.ts";
-
+import { PokemonListRow } from "../../adapters/PokemonListAdapter";
+import type { PokemonListItem } from "@/shared/models/pokemon";
 import PokemonItem from "../molecules/PokemonItem.vue";
 
 const props = defineProps<{
-  pokemons: Array<PokemonListRow>;
+  pokemons: Array<PokemonListRow | PokemonListItem>;
   loading: boolean;
   hasMore: boolean;
   onFetchMore: () => void;

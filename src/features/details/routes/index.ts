@@ -1,11 +1,11 @@
 import type { Component } from "vue";
-import type { RouteRecordRaw, RawRouteComponent } from "vue-router";
+import type { RouteRecordRaw, RouteComponent } from "vue-router";
 
 type LazyComp = () => Promise<{ default: Component }>;
 
 export function buildDetailModalChild(
   name: string,
-  defaultComponent?: RawRouteComponent | LazyComp,
+  defaultComponent?: RouteComponent | LazyComp,
 ): RouteRecordRaw {
   return {
     path: ":name",

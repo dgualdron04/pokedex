@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import SearchSvg from "@/app/assets/icones/Search.svg?component";
+import SearchSvg from "@/app/assets/icons/Search.svg?component";
 const props = defineProps<{ modelValue: string; placeholder?: string }>();
 const emit = defineEmits<{ (e: "update:modelValue", v: string): void }>();
 

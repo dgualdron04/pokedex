@@ -46,13 +46,13 @@
 <script setup lang="ts">
 import { watch, computed } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import useFunctions from "@/shared/composables/useFunctions";
+import useFunctions from "@/shared/composables/UseFunctions";
 
-import { UsePokedexDetail } from "../composables/UsePokedexDetail.ts";
+import { UsePokedexDetail } from "../composables/UsePokedexDetail";
 import ButtonBase from "@/shared/ui/atoms/ButtonBase.vue";
 import StarSvg from "@/shared/ui/atoms/StarSvg.vue";
-import XMarkSvg from "@/app/assets/icones/x-mark.svg?component";
-import { UseFavorites } from "@/features/favorites/composables/UseFavorites.ts";
+import XMarkSvg from "@/app/assets/icons/x-mark.svg?component";
+import { UseFavorites } from "@/features/favorites/composables/UseFavorites";
 
 defineOptions({ name: "PokemonDetailView" });
 
