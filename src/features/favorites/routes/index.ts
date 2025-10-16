@@ -9,6 +9,7 @@ export const favoritesRoutes: Array<RouteRecordRaw> = [
       {
         path: "",
         name: "favorites",
+        meta: { title: "Favorites" },
         component: () => import("../views/PokemonFavoritesView.vue"),
       },
       buildDetailModalChild(

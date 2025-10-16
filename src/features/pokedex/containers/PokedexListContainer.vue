@@ -16,6 +16,7 @@
         :onToggleFavorite="
           (p) => favoriteList.toggle({ id: p.id, name: p.name })
         "
+        detailRouteName="pokemon-detail"
       />
     </template>
   </SearchWrapper>

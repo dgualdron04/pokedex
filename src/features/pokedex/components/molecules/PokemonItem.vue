@@ -24,10 +24,12 @@ const props = defineProps<{
   id: number;
   name: string;
   isFavorite?: boolean;
+  detailRouteName: string;
 }>();
 
 function goToDetail() {
-  router.push({ name: "pokemon-detail", params: { name: props.name } });
+  const routeName = props.detailRouteName ?? "pokemon-detail";
+  router.push({ name: routeName, params: { name: props.name } });
 }
 
 const emit = defineEmits<{ (e: "toggle-fav"): void }>();

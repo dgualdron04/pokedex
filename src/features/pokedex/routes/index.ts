@@ -9,6 +9,7 @@ export const pokedexRoutes: Array<RouteRecordRaw> = [
       {
         path: "",
         name: "pokedex",
+        meta: { title: "List" },
         components: {
           default: () => import("../views/PokedexListView.vue"),
         },
