@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch, ref, computed } from "vue";
+import { watch, computed } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import useFunctions from "@/shared/composables/useFunctions";
 
