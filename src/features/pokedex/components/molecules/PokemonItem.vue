@@ -42,6 +42,7 @@ const emit = defineEmits<{ (e: "toggle-fav"): void }>();
   justify-content: space-between;
   padding: 8px 10px 8px 20px;
   margin: 0 0 10px 0;
+  cursor: pointer;
 }
 
 .item h3 {

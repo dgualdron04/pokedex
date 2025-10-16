@@ -7,7 +7,7 @@
     @click="onClick"
   >
     <slot name="icon-left" />
-    <slot>{{ label }}</slot>
+    <slot></slot>
     <slot name="icon-right" />
     <slot name="loader" v-if="loading" />
   </component>
@@ -98,7 +98,7 @@ const componentProps = computed(() => {
   cursor: pointer;
   transition: filter 0.2s;
   text-decoration: none;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -115,5 +115,9 @@ const componentProps = computed(() => {
   filter: grayscale(1);
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+.btn-label {
+  margin: 0 10px;
 }
 </style>

@@ -1,9 +1,9 @@
 import { ref, shallowRef, onUnmounted, type Ref, type ShallowRef } from "vue";
 import type { AxiosResponse } from "axios";
 import type { UseApiCall } from "../models/UseApiCall.ts";
+import { UseLoadingStore } from "../../app/store/UseLoadingStore.ts";
 
 type UseApiOptions<P> = { autoFetch?: boolean; params: P };
-//type Data<T> = T | null;
 type CustomError = Error | null;
 
 interface UseApiResult<T, P> {
@@ -20,6 +20,7 @@ export const useApi = <T, P>(
   const loading = ref<boolean>(false);
   const data = shallowRef<T | null>(null);
   const error = ref<CustomError>(null);
+  const loadingStore = UseLoadingStore();
 
   const controller = shallowRef<AbortController | null>(null);
 
@@ -30,6 +31,7 @@ export const useApi = <T, P>(
     controller.value = apiController;
 
     loading.value = true;
+    loadingStore.start();
     return call
       .then((response: AxiosResponse<T> | { data: T }) => {
         data.value = (response as AxiosResponse<T>).data;
@@ -40,6 +42,7 @@ export const useApi = <T, P>(
       })
       .finally(() => {
         loading.value = false;
+        loadingStore.stop();
       });
   };
 

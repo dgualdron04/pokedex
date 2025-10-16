@@ -5,7 +5,8 @@
         <PokemonItem
           :id="pokemon.id"
           :name="pokemon.name"
-          :is-favorite="false"
+          :is-favorite="pokemon.isFavorite ?? false"
+          @toggle-fav="() => onToggleFavorite(pokemon)"
         />
       </li>
     </ul>

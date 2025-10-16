@@ -1,6 +1,6 @@
 <template>
   <svg
-    @click="emit('click')"
+    @click="onClick"
     width="44"
     height="44"
     viewBox="0 0 44 44"
@@ -36,7 +36,11 @@ defineProps<{
   favorite?: boolean;
 }>();
 
-const emit = defineEmits<{ (e: "click"): void }>();
+const emit = defineEmits<{ (e: "click", ev: MouseEvent): void }>();
+
+function onClick(ev: MouseEvent) {
+  emit("click", ev);
+}
 </script>
 
 <style scoped>
