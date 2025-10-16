@@ -15,10 +15,14 @@ const routes: Array<RouteRecordRaw> = [
   },
   ...pokedexRoutes,
   ...favoritesRoutes,
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
+  },
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
