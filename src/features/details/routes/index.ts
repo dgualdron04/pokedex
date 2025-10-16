@@ -9,6 +9,7 @@ export function buildDetailModalChild(
 ): RouteRecordRaw {
   return {
     path: ":name",
+    meta: { title: "Pokemon Detail" },
     name,
     components: {
       default: defaultComponent,

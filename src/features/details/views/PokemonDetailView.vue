@@ -34,8 +34,8 @@
           </ButtonBase>
           <StarSvg
             class="item__star"
-            :favorite="true"
-            @click.stop="emit('toggle-fav')"
+            :favorite="isFavorite"
+            @click="toggleFavorite"
           />
         </footer>
       </div>
@@ -52,17 +52,31 @@ import { UsePokedexDetail } from "../composables/UsePokedexDetail.ts";
 import ButtonBase from "@/shared/ui/atoms/ButtonBase.vue";
 import StarSvg from "@/shared/ui/atoms/StarSvg.vue";
 import XMarkSvg from "@/app/assets/icones/x-mark.svg?component";
+import { UseFavorites } from "@/features/favorites/composables/UseFavorites.ts";
+
+defineOptions({ name: "PokemonDetailView" });
 
 const route = useRoute();
 const router = useRouter();
 const { toCamelCase } = useFunctions();
+const favorites = UseFavorites();
 
 const pokemonName = String(route.params.name);
 
 const { pokemon, loading, error, refetch } = UsePokedexDetail(pokemonName);
 
+const isFavorite = computed(() =>
+  pokemon.value ? favorites.isFavorite(pokemon.value.id) : false,
+);
+
+function toggleFavorite() {
+  const p = pokemon.value;
+  if (!p) return;
+  favorites.toggle({ id: p.id, name: p.name, img: p.img });
+}
+
 watch(
-  () => pokemonName,
+  () => route.params.name,
   (n) => {
     if (n) void refetch(String(n));
   },
@@ -84,6 +98,10 @@ const handleShareDetails = () => {
 };
 
 function close() {
+  if (window.history.length > 1) {
+    router.back();
+    return;
+  }
   router.push({ name: "pokedex" });
 }
 </script>

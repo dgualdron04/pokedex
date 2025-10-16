@@ -5,7 +5,9 @@
         <PokemonItem
           :id="pokemon.id"
           :name="pokemon.name"
-          :is-favorite="false"
+          :is-favorite="pokemon.isFavorite ?? false"
+          @toggle-fav="() => onToggleFavorite(pokemon)"
+          :detail-route-name="props.detailRouteName"
         />
       </li>
     </ul>
@@ -29,6 +31,7 @@ const props = defineProps<{
   hasMore: boolean;
   onFetchMore: () => void;
   onToggleFavorite: (p: PokemonListRow) => void;
+  detailRouteName?: string;
 }>();
 
 const sentinel = ref<HTMLDivElement | null>(null);

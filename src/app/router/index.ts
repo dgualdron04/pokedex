@@ -10,6 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "welcome",
+    meta: { title: "Welcome" },
     component: () => import("@/app/views/WelcomeView.vue"),
   },
   ...pokedexRoutes,
@@ -19,4 +20,11 @@ const routes: Array<RouteRecordRaw> = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.afterEach((to) => {
+  const baseTitle = "Pokedex App";
+  document.title = to.meta.title
+    ? `${to.meta.title} | ${baseTitle}`
+    : baseTitle;
 });
