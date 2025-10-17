@@ -12,7 +12,7 @@
       </li>
     </ul>
 
-    <div ref="sentinel" v-show="hasMore">
+    <div ref="sentinel" class="sentinel" v-show="hasMore">
       <span v-if="loading">Loding more...</span>
     </div>
   </section>
@@ -61,5 +61,9 @@ onUnmounted(() => observer?.disconnect());
 
 .list ul {
   list-style: none;
+}
+.sentinel {
+  height: 1px;
+  width: 100%;
 }
 </style>
